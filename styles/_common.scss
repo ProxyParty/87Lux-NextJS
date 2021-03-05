@@ -1,0 +1,28 @@
+.navbar {
+  &__content {
+    font-family: $primary-font;
+    background: #ffffff;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.2);
+    padding: 7px 0 7px 0;
+    position: relative;
+    z-index: 6;
+  }
+  &__logo {
+    padding-left: 22rem;
+    span {
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 17px;
+    }
+  }
+  &__links {
+    .link {
+      font-size: 12px;
+      padding-right: 5px;
+      text-decoration: none;
+      &:hover {
+        color: $accent-color;
+      }
+    }
+  }
+}

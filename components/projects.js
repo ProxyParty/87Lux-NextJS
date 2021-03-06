@@ -14,6 +14,9 @@ class Projects extends Component {
         <div className="row">
           <div className="projects__slider-wrap">
             <div className="slider">
+              <span className="slider__title">
+                Latest Projects
+              </span>
               <div className="vid-section">
                 <div className="col-4 video1">
                   <div className="image"></div>

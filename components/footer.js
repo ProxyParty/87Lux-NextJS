@@ -5,8 +5,8 @@ const Footer = () => {
     <div className="footer">
       <span className="footer__title">need a custom solution?</span>
       <div className="footer__half-tone">
-        <span></span>
-        <div className="btn btn-primary">btn</div>
+        <span>We work with any budget!</span>
+        <div className="btn btn-primary">Lets Get Started</div>
       </div>
       <div className="container justify-content-md-center mid-footer">
         <div className="row">
@@ -43,7 +43,15 @@ const Footer = () => {
                 Having trouble with installing any of our themes? Well we can
                 help you by installing the theme for you!
               </div>
-              <div className="col-8 images">whoa3</div>
+              <div className="col-8 images">
+                <Image
+                  className="solutions-img"
+                  src="/img/laptopguy.jpg"
+                  layout="fill"
+                  priority={true}
+                  quality={100}
+                />
+              </div>
             </div>
           </div>
         </div>

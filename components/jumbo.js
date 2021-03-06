@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ReactPlayer from "react-player";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -25,7 +26,7 @@ class Jumbo extends Component {
                 <div className="form-group jumbo__email">
                   <input
                     type="email"
-                    class="enter-email"
+                    className="enter-email"
                     id="enter-email"
                     placeholder="Enter your email address"
                   />
@@ -39,9 +40,22 @@ class Jumbo extends Component {
           <div className="col-6 jumbo__col2">
             <div className="jumbo__video">
               <span className="screen">
-                <span className="play-circle">
-                  <span className="play-triangle"></span>
-                </span>
+                <ReactPlayer
+                  url="https://www.youtube.com/watch?v=7EUVJaKJtBY"
+                  light={true}
+                  width="100%"
+                  height="100%"
+                  style={{
+                    position: "absolute",
+                    top: "0",
+                    left: "0",
+                  }}
+                  playIcon={
+                    <span className="play-circle">
+                      <span className="play-triangle"></span>
+                    </span>
+                  }
+                />
               </span>
             </div>
             <span className="triangle-wrap">

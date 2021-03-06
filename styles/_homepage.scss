@@ -41,6 +41,10 @@ body {
     box-shadow: 0px 12px 42px 1px rgba(0, 0, 0, 0.15);
     font-size: 12px;
     font-weight: 600;
+    &:hover {
+      background: rgb(231, 203, 255);
+      color: #7d52fc;
+    }
   }
   .jumbo__col1 {
     padding-left: 18%;
@@ -50,9 +54,10 @@ body {
     left: -20px;
     padding: 7.5rem 14.5rem;
     border-radius: 6px;
-    background: #f9e84a;
+    background: #000000;
     position: absolute;
     z-index: 3;
+    overflow: hidden;
     .play-circle {
       top: 39%;
       left: 42%;
@@ -60,6 +65,11 @@ body {
       background: white;
       border-radius: 100%;
       position: absolute;
+      cursor: pointer;
+      transition: ease-in-out all 0.2s;
+      &:hover {
+        background: gray;
+      }
       .play-triangle {
         position: absolute;
         top: 34%;
@@ -208,6 +218,11 @@ body {
       font-size: 14px;
       font-weight: 600;
       color: $accent-color;
+      cursor: pointer;
+      &:hover {
+        background: rgb(231, 203, 255);
+        // color: white;
+      }
     }
     .viewapps {
       border-width: 1px;
@@ -216,6 +231,11 @@ body {
       font-size: 14px;
       font-weight: 600;
       color: $accent-color;
+      cursor: pointer;
+      &:hover {
+        background: rgb(231, 203, 255);
+        // color: white;
+      }
     }
   }
 }
@@ -371,6 +391,11 @@ body {
       padding: 12px 27px;
       top: 65%;
       left: 45%;
+      cursor: pointer;
+      &:hover {
+        background: rgb(231, 203, 255);
+        color: #7d52fc;
+      }
     }
   }
   .mid-footer {
@@ -396,6 +421,14 @@ body {
         padding-bottom: 8px;
         font-size: 12px;
         line-height: 23px;
+        cursor: pointer;
+        transition: ease-in-out all 0.2s;
+        &:hover {
+          color: rgb(124, 124, 124);
+          span {
+            color: rgb(164, 221, 164);
+          }
+        }
         &.active {
           color: black;
           span {

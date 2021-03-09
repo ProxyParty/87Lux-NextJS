@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import ReactPlayer from "react-player";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,9 +9,16 @@ class Jumbo extends Component {
     this.state = {};
   }
 
+  state = { isActive: false };
+
+  handleToggle = () => {
+    this.setState({ isActive: !this.state.isActive });
+  };
+
   render() {
+    const isActive = this.state.isActive;
     return (
-      <div className="jumbo">
+      <div className=" container-fluid jumbo">
         <div className="row">
           <div className="col-6 jumbo__col1">
             <div className="row-fluid">
@@ -31,7 +38,7 @@ class Jumbo extends Component {
                     placeholder="Enter your email address"
                   />
                 </div>
-                <button type="submit" class="btn jumbo__btn">
+                <button type="submit" className="btn jumbo__btn">
                   Get Started
                 </button>
               </form>
@@ -51,7 +58,7 @@ class Jumbo extends Component {
                     left: "0",
                   }}
                   playIcon={
-                    <span className="play-circle">
+                    <span className="play-circle" onClick={this.handleToggle}>
                       <span className="play-triangle"></span>
                     </span>
                   }
@@ -75,6 +82,23 @@ class Jumbo extends Component {
           <span className="col-md-auto wordpress"></span>
           <span className="col-md-auto woo"></span>
           <span className="col-md-3 wix"></span>
+        </div>
+        <div
+          className={`container-fluid modal-wrap ${
+            isActive ? "modal-active" : ""
+          }`}
+        >
+          <ReactPlayer
+            url="https://www.youtube.com/watch?v=7EUVJaKJtBY"
+            className="modal-video"
+            width="60%"
+            height="60%"
+            style={{
+              top: "20%",
+              left: "20%",
+              zIndex: 10,
+            }}
+          />
         </div>
       </div>
     );

@@ -88,15 +88,25 @@ class Jumbo extends Component {
             isActive ? "modal-active" : ""
           }`}
         >
+          <div className="container-fluid close-wrap">
+            <div className="close-icon">
+              <div className="close1"></div>
+              <div className="close2"></div>
+            </div>
+          </div>
           <ReactPlayer
             url="https://www.youtube.com/watch?v=7EUVJaKJtBY"
             className="modal-video"
             width="60%"
             height="60%"
+            playing={false}
             style={{
               top: "20%",
               left: "20%",
               zIndex: 10,
+            }}
+            onReady={() => {
+              setReady(true);
             }}
           />
         </div>

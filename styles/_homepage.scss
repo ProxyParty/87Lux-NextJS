@@ -171,6 +171,38 @@ body {
   & .modal-wrap.modal-active {
     opacity: 100%;
     visibility: visible;
+    .close-wrap {
+      background: red;
+      position: relative;
+      width: 60px;
+      height: 60px;
+      border-radius: 100%;
+      top: 12%;
+      left: 22%;
+      margin: 0;
+      .close-icon {
+        .close1 {
+          position: absolute;
+          background: rgb(255, 255, 255);
+          height: 50px;
+          width: 8px;
+          left: 43%;
+          top: 9%;
+          transform: rotate(-45deg);
+          border-radius: 3px;
+        }
+        .close2 {
+          position: absolute;
+          background: rgb(255, 255, 255);
+          height: 50px;
+          width: 8px;
+          left: 43%;
+          top: 9%;
+          transform: rotate(45deg);
+          border-radius: 3px;
+        }
+      }
+    }
   }
 }
 

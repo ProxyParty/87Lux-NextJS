@@ -313,12 +313,12 @@ body {
   .grncirc {
     padding: 40px;
     position: absolute;
-    top: 25%;
-    right: 50%;
+    // top: 25%;
+    // right: 50%;
     border: 5px green solid;
     border-radius: 100%;
     filter: drop-shadow(0px 12px 22px rgb(24, 255, 162, 0.3));
-    animation: grncirc 3s infinite;
+    animation: grncirc 5s linear infinite;
     z-index: 2;
     .circ-img1 {
       object-fit: cover;
@@ -538,16 +538,14 @@ body {
 // Animations
 
 @keyframes grncirc {
-  0% {
-    border-color: red;
+  from {
+    top: 15%;
+    right: 50%;
+    transform: rotate(0deg) translateX(80px) rotate(0deg);
   }
-  25% {
-    border-color: yellow;
-  }
-  50% {
-    border-color: blue;
-  }
-  100% {
-    border-color: green;
+  to {
+    top: 15%;
+    right: 50%;
+    transform: rotate(360deg) translateX(80px) rotate(-360deg);
   }
 }

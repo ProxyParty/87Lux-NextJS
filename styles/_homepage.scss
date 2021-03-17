@@ -58,6 +58,9 @@ body {
     position: absolute;
     z-index: 3;
     overflow: hidden;
+    &:hover .play-circle {
+      background: gray;
+    }
     .play-circle {
       top: 39%;
       left: 42%;
@@ -67,9 +70,6 @@ body {
       position: absolute;
       cursor: pointer;
       transition: ease-in-out all 0.2s;
-      &:hover {
-        background: gray;
-      }
       .play-triangle {
         position: absolute;
         top: 34%;
@@ -172,22 +172,27 @@ body {
     opacity: 100%;
     visibility: visible;
     .close-wrap {
-      background: red;
       position: relative;
       width: 60px;
       height: 60px;
       border-radius: 100%;
-      top: 12%;
+      top: 10%;
       left: 22%;
       margin: 0;
+      border: 3px solid transparent;
+      cursor: pointer;
+      transition: border-color ease 0.5s;
+      &:hover {
+        border: 3px solid white;
+      }
       .close-icon {
         .close1 {
           position: absolute;
           background: rgb(255, 255, 255);
           height: 50px;
           width: 8px;
-          left: 43%;
-          top: 9%;
+          left: 42.5%;
+          top: 3.5%;
           transform: rotate(-45deg);
           border-radius: 3px;
         }
@@ -196,8 +201,8 @@ body {
           background: rgb(255, 255, 255);
           height: 50px;
           width: 8px;
-          left: 43%;
-          top: 9%;
+          left: 42.5%;
+          top: 3.5%;
           transform: rotate(45deg);
           border-radius: 3px;
         }
@@ -313,6 +318,7 @@ body {
     border: 5px green solid;
     border-radius: 100%;
     filter: drop-shadow(0px 12px 22px rgb(24, 255, 162, 0.3));
+    animation: grncirc 3s infinite;
     z-index: 2;
     .circ-img1 {
       object-fit: cover;
@@ -526,5 +532,22 @@ body {
         }
       }
     }
+  }
+}
+
+// Animations
+
+@keyframes grncirc {
+  0% {
+    border-color: red;
+  }
+  25% {
+    border-color: yellow;
+  }
+  50% {
+    border-color: blue;
+  }
+  100% {
+    border-color: green;
   }
 }

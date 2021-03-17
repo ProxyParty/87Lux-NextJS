@@ -46,10 +46,11 @@ class Jumbo extends Component {
           </div>
           <div className="col-6 jumbo__col2">
             <div className="jumbo__video">
-              <span className="screen">
+              <span className="screen" onClick={this.handleToggle}>
                 <ReactPlayer
                   url="https://www.youtube.com/watch?v=7EUVJaKJtBY"
                   light={true}
+                  playing={false}
                   width="100%"
                   height="100%"
                   style={{
@@ -57,12 +58,10 @@ class Jumbo extends Component {
                     top: "0",
                     left: "0",
                   }}
-                  playIcon={
-                    <span className="play-circle" onClick={this.handleToggle}>
-                      <span className="play-triangle"></span>
-                    </span>
-                  }
                 />
+                <span className="play-circle">
+                  <span className="play-triangle"></span>
+                </span>
               </span>
             </div>
             <span className="triangle-wrap">
@@ -88,7 +87,10 @@ class Jumbo extends Component {
             isActive ? "modal-active" : ""
           }`}
         >
-          <div className="container-fluid close-wrap">
+          <div
+            className="container-fluid close-wrap"
+            onClick={this.handleToggle}
+          >
             <div className="close-icon">
               <div className="close1"></div>
               <div className="close2"></div>
@@ -104,9 +106,6 @@ class Jumbo extends Component {
               top: "20%",
               left: "20%",
               zIndex: 10,
-            }}
-            onReady={() => {
-              setReady(true);
             }}
           />
         </div>

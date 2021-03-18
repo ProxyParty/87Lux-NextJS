@@ -10,15 +10,13 @@ class Projects extends Component {
 
   render() {
     return (
-      <div className="projects">
+      <div className="container-fluid projects">
         <div className="row">
-          <div className="projects__slider-wrap">
-            <div className="slider">
-              <span className="slider__title">
-                Latest Projects
-              </span>
+          <div className="projects__slider-wrap carousel" data-ride="carousel">
+            <div className="slider carousel-inner">
+              <span className="slider__title">Latest Projects</span>
               <div className="vid-section">
-                <div className="col-4 video1">
+                <div className="col-4 video1 carousel-item active">
                   <div className="image"></div>
                   <style jsx>{`
                     .image {
@@ -28,7 +26,7 @@ class Projects extends Component {
                     }
                   `}</style>
                 </div>
-                <div className="col-4 video2">
+                <div className="col-4 video2 carousel-item active">
                   <div className="image"></div>
                   <style jsx>{`
                     .image {
@@ -38,7 +36,7 @@ class Projects extends Component {
                     }
                   `}</style>
                 </div>
-                <div className="col-4 video3">
+                <div className="col-4 video3 carousel-item active">
                   <div className="image"></div>
                   <style jsx>{`
                     .image {

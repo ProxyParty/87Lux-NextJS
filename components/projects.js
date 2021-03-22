@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Icon from '@fortawesome/fontawesome-free-solid'
 
 class Projects extends Component {
   constructor() {
@@ -48,6 +50,8 @@ class Projects extends Component {
                 </div>
               </div>
             </div>
+            <FontAwesomeIcon className="chevleft" icon={Icon.faChevronLeft} />
+            <FontAwesomeIcon className="chevright" icon={Icon.faChevronRight} />
           </div>
         </div>
         <div className="row projects__buttons justify-content-center">

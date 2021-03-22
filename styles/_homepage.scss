@@ -267,6 +267,38 @@ body {
         padding-right: 8px;
       }
     }
+    .chevright {
+      opacity: 50%;
+      color: white;
+      position: absolute;
+      top: 48%;
+      left: 128%;
+      width: 35px;
+      filter: drop-shadow(-8px 3px 15px black);
+      cursor: pointer;
+      z-index: 2;
+      transition: all ease-in-out 0.2s;
+      &:hover {
+        opacity: 100%;
+        filter: drop-shadow(-8px 3px 5px black);
+      }
+    }
+    .chevleft {
+      opacity: 50%;
+      color: white;
+      position: absolute;
+      top: 48%;
+      left: 41%;
+      width: 35px;
+      filter: drop-shadow(8px 3px 15px black);
+      cursor: pointer;
+      z-index: 2;
+      transition: all ease-in-out 0.2s;
+      &:hover {
+        opacity: 100%;
+        filter: drop-shadow(8px 3px 5px black);
+      }
+    }
   }
   &__buttons {
     .viewthemes {

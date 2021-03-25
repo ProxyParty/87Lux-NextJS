@@ -1,8 +1,9 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Icon from '@fortawesome/fontawesome-free-solid'
+import Icon from "@fortawesome/fontawesome-free-solid";
+// import { projectsData } from "./projectsData";
 
 class Projects extends Component {
   constructor() {
@@ -14,43 +15,61 @@ class Projects extends Component {
     return (
       <div className="container-fluid projects">
         <div className="row">
-          <div className="projects__slider-wrap carousel" data-ride="carousel">
-            <div className="slider carousel-inner">
+          <div className="projects__slider-wrap">
+            <div className="slider">
               <span className="slider__title">Latest Projects</span>
-              <div className="vid-section">
-                <div className="col-4 video1 carousel-item active">
-                  <div className="image"></div>
-                  <style jsx>{`
-                    .image {
-                      background: url("/img/Rectangle7.png");
-                      background-position: center;
-                      object-fit: cover;
-                    }
-                  `}</style>
+              <div className="slide-section">
+                <div className="col-4 slide1 carousel_slide">
+                  <Image
+                    src="/img/Rectangle7.png"
+                    className="image-item"
+                    layout="fill"
+                    priority={true}
+                    quality={100}
+                  />
                 </div>
-                <div className="col-4 video2 carousel-item active">
-                  <div className="image"></div>
+                <div className="col-4 slide2 carousel_slide">
+                  <Image
+                    src="/img/Rectangle8.png"
+                    className="image-item"
+                    layout="fill"
+                    priority={true}
+                    quality={100}
+                  />
+                </div>
+                <div className="col-4 slide3 carousel_slide">
+                  <Image
+                    src="/img/Rectangle8.png"
+                    className="image-item"
+                    layout="fill"
+                    priority={true}
+                    quality={100}
+                  />
+                </div>
+                {/* <div className="col-4 slide2 carousel-item active">
+                  <div className="image-item"></div>
                   <style jsx>{`
-                    .image {
+                    .image-item {
                       background: url("/img/Rectangle8.png");
                       background-position: center;
                       object-fit: cover;
                     }
                   `}</style>
-                </div>
-                <div className="col-4 video3 carousel-item active">
-                  <div className="image"></div>
+                </div> */}
+                {/* <div className="col-4 slide3 carousel-item active">
+                  <div className="image-item"></div>
                   <style jsx>{`
-                    .image {
+                    .image-item {
                       background: url("/img/Rectangle7.png");
                       background-position: center;
                       object-fit: cover;
                     }
                   `}</style>
-                </div>
+                </div> */}
               </div>
             </div>
             <FontAwesomeIcon className="chevleft" icon={Icon.faChevronLeft} />
+
             <FontAwesomeIcon className="chevright" icon={Icon.faChevronRight} />
           </div>
         </div>

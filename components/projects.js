@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Icon from "@fortawesome/fontawesome-free-solid";
-// import { projectsData } from "./projectsData";
+import { projectsData } from "./projectsData";
 
 class Projects extends Component {
   constructor() {
@@ -16,17 +16,21 @@ class Projects extends Component {
       <div className="container-fluid projects">
         <div className="row">
           <div className="projects__slider-wrap">
+            <span className="title">Latest Projects</span>
             <div className="slider">
-              <span className="slider__title">Latest Projects</span>
               <div className="slide-section">
                 <div className="col-4 slide1 carousel_slide">
-                  <Image
-                    src="/img/Rectangle7.png"
-                    className="image-item"
-                    layout="fill"
-                    priority={true}
-                    quality={100}
-                  />
+                  {projectsData.map((slide, index) => {
+                    return (
+                      <Image
+                        src={slide.image}
+                        className="image-item"
+                        layout="fill"
+                        priority={true}
+                        quality={100}
+                      />
+                    );
+                  })}
                 </div>
                 <div className="col-4 slide2 carousel_slide">
                   <Image

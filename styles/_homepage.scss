@@ -248,16 +248,19 @@ body {
         width: 1100px;
         height: 256px;
         z-index: 3;
+        display: inline-flex;
         .carousel_slide {
           top: 0;
-          left: 1%;
-          position: absolute;
+          // left: 1%;
+          position: relative;
           width: 400px;
           height: 255px;
           padding: 0;
+          margin-right: 10px;
           overflow: hidden;
           border-radius: 10px;
-          max-width: 41%;
+          max-width: 38%;
+          filter: drop-shadow(30px 10px 4px #4444dd);
           .image-item {
             object-fit: fill;
             object-position: center;
@@ -266,17 +269,8 @@ body {
             min-height: 125% !important;
             top: 18px !important;
             left: -30px !important;
+            filter: none;
           }
-        }
-        .slide2 {
-          top: 0;
-          left: 40%;
-          position: absolute;
-        }
-        .slide3 {
-          top: 0;
-          left: 79%;
-          position: absolute;
         }
       }
     }

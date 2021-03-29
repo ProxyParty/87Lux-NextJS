@@ -19,9 +19,9 @@ class Projects extends Component {
             <span className="title">Latest Projects</span>
             <div className="slider">
               <div className="slide-section">
-                <div className="col-4 slide1 carousel_slide">
-                  {projectsData.map((slide, index) => {
-                    return (
+                {projectsData.map((slide, index) => {
+                  return (
+                    <div className="col-5 carousel_slide">
                       <Image
                         src={slide.image}
                         className="image-item"
@@ -29,10 +29,10 @@ class Projects extends Component {
                         priority={true}
                         quality={100}
                       />
-                    );
-                  })}
-                </div>
-                <div className="col-4 slide2 carousel_slide">
+                    </div>
+                  );
+                })}
+                {/* <div className="col-4 slide2 carousel_slide">
                   <Image
                     src="/img/Rectangle8.png"
                     className="image-item"
@@ -49,7 +49,7 @@ class Projects extends Component {
                     priority={true}
                     quality={100}
                   />
-                </div>
+                </div> */}
                 {/* <div className="col-4 slide2 carousel-item active">
                   <div className="image-item"></div>
                   <style jsx>{`

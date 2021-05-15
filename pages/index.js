@@ -2,6 +2,7 @@ import Head from "next/head";
 import Jumbo from "../components/jumbo";
 import Projects from "../components/projects";
 import Team from "../components/team";
+import { projectsData } from "../components/projectsData";
 
 export default function Home() {
   return (
@@ -17,7 +18,7 @@ export default function Home() {
         ></link>
       </Head>
       <Jumbo />
-      <Projects />
+      <Projects slides={projectsData} />
       <Team />
     </div>
   );

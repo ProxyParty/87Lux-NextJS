@@ -5,85 +5,68 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Icon from "@fortawesome/fontawesome-free-solid";
 import { projectsData } from "./projectsData";
 
-class Projects extends Component {
-  constructor() {
-    super();
-    this.state = {};
+const Projects = ({ slides }) => {
+  const [current, setCurrent] = useState(0);
+  const length = slides.length;
+  const nextSlide = () => {
+    setCurrent(current === length - 1 ? 0 : current + 1);
+  };
+  const prevSlide = () => {
+    setCurrent(current === 0 ? length - 1 : current - 1);
+  };
+  if (!Array.isArray(slides) || slides.length <= 0) {
+    return null;
   }
-
-  render() {
-    return (
-      <div className="container-fluid projects">
-        <div className="row">
-          <div className="projects__slider-wrap">
-            <span className="title">Latest Projects</span>
-            <div className="slider">
-              <div className="slide-section">
-                {projectsData.map((slide, index) => {
-                  return (
-                    <div className="col-5 carousel_slide">
-                      <Image
-                        src={slide.image}
-                        className="image-item"
-                        layout="fill"
-                        priority={true}
-                        quality={100}
-                      />
-                    </div>
-                  );
-                })}
-                {/* <div className="col-4 slide2 carousel_slide">
-                  <Image
-                    src="/img/Rectangle8.png"
-                    className="image-item"
-                    layout="fill"
-                    priority={true}
-                    quality={100}
-                  />
-                </div>
-                <div className="col-4 slide3 carousel_slide">
-                  <Image
-                    src="/img/Rectangle8.png"
-                    className="image-item"
-                    layout="fill"
-                    priority={true}
-                    quality={100}
-                  />
-                </div> */}
-                {/* <div className="col-4 slide2 carousel-item active">
-                  <div className="image-item"></div>
-                  <style jsx>{`
-                    .image-item {
-                      background: url("/img/Rectangle8.png");
-                      background-position: center;
-                      object-fit: cover;
+  return (
+    <div className="container-fluid projects">
+      <div className="row">
+        <div className="projects__slider-wrap">
+          <span className="title">Latest Projects</span>
+          <div className="slider">
+            <div className="slide-section">
+              {/* projectsData.map is being used in a way that lays out an entire array belonging to a JSON file, in this case an array of images */}
+              {projectsData.map((slide, index) => {
+                return (
+                  <div
+                    className={
+                      index === current
+                        ? `col-5 carousel_slide slide order-first`
+                        : `col-5 carousel_slide slide`
                     }
-                  `}</style>
-                </div> */}
-                {/* <div className="col-4 slide3 carousel-item active">
-                  <div className="image-item"></div>
-                  <style jsx>{`
-                    .image-item {
-                      background: url("/img/Rectangle7.png");
-                      background-position: center;
-                      object-fit: cover;
-                    }
-                  `}</style>
-                </div> */}
-              </div>
+                    key={index}
+                  >
+                    <Image
+                      src={slide.image}
+                      className="image-item"
+                      layout="fill"
+                      priority={true}
+                      quality={100}
+                    />
+                    )
+                  </div>
+                );
+              })}
             </div>
-            <FontAwesomeIcon className="chevleft" icon={Icon.faChevronLeft} />
-
-            <FontAwesomeIcon className="chevright" icon={Icon.faChevronRight} />
           </div>
-        </div>
-        <div className="row projects__buttons justify-content-center">
-          <div className="btn viewthemes">View Themes</div>
-          <div className="btn viewapps">View Apps</div>
+          <FontAwesomeIcon
+            className="chevleft"
+            icon={Icon.faChevronLeft}
+            onClick={prevSlide}
+          />
+
+          <FontAwesomeIcon
+            className="chevright"
+            icon={Icon.faChevronRight}
+            onClick={nextSlide}
+          />
         </div>
       </div>
-    );
-  }
-}
+      <div className="row projects__buttons justify-content-center">
+        <div className="btn viewthemes">View Themes</div>
+        <div className="btn viewapps">View Apps</div>
+      </div>
+    </div>
+  );
+};
 
 export default Projects;

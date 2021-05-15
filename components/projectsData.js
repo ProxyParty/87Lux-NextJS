@@ -1,18 +1,18 @@
 export const projectsData = [
   {
-    key: 0,
+    num: 1,
     image: "/img/Rectangle7.png",
   },
   {
-    key: 1,
+    num: 2,
     image: "/img/Rectangle8.png",
   },
   {
-    key: 2,
+    num: 3,
     image: "/img/Rectangle7.png",
   },
   {
-    key: 3,
+    num: 4,
     image: "/img/Rectangle8.png",
   },
 ];

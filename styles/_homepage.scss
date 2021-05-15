@@ -244,7 +244,7 @@ body {
         // padding: 8rem 50px 8rem 74rem;
         // background: green;
         position: absolute;
-        overflow-y: scroll;
+        // overflow-x: scroll;
         width: 1100px;
         height: 256px;
         z-index: 3;
@@ -260,7 +260,7 @@ body {
           overflow: hidden;
           border-radius: 10px;
           max-width: 38%;
-          filter: drop-shadow(30px 10px 4px #4444dd);
+          filter: drop-shadow(10px 15px 8px #2b2b2b70);
           .image-item {
             object-fit: fill;
             object-position: center;

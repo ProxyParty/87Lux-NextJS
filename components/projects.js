@@ -8,6 +8,13 @@ import { projectsData } from "./projectsData";
 const Projects = ({ slides }) => {
   const [current, setCurrent] = useState(0);
   const length = slides.length;
+  function slideOrder() {
+    var slideNum = 1;
+    while (slideNum < slides.length) {
+      slideNum++;
+    }
+    return slideNum;
+  }
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
   };
@@ -30,7 +37,7 @@ const Projects = ({ slides }) => {
                   <div
                     className={
                       index === current
-                        ? `col-5 carousel_slide slide order-first`
+                        ? `col-5 carousel_slide slide first`
                         : `col-5 carousel_slide slide`
                     }
                     key={index}

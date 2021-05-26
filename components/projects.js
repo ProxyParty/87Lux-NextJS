@@ -3,18 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Icon from "@fortawesome/fontawesome-free-solid";
+/* imported projectsData JSON file as a module */
 import { projectsData } from "./projectsData";
 
 const Projects = ({ slides }) => {
   const [current, setCurrent] = useState(0);
   const length = slides.length;
-  function slideOrder() {
-    var slideNum = 1;
-    while (slideNum < slides.length) {
-      slideNum++;
-    }
-    return slideNum;
-  }
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
   };
@@ -31,10 +25,11 @@ const Projects = ({ slides }) => {
           <span className="title">Latest Projects</span>
           <div className="slider">
             <div className="slide-section">
-              {/* projectsData.map is being used in a way that lays out an entire array belonging to a JSON file, in this case an array of images */}
+              {/* ProjectsData.map is being used in a way that lays out an entire array belonging to a JSON file, in this case an array of images */}
               {projectsData.map((slide, index) => {
                 return (
                   <div
+                    /* Clarifies the current slide's class name and what the other slides' class names will be */
                     className={
                       index === current
                         ? `col-5 carousel_slide slide first`
@@ -58,12 +53,14 @@ const Projects = ({ slides }) => {
           <FontAwesomeIcon
             className="chevleft"
             icon={Icon.faChevronLeft}
+            /* onClick attribute used to switch to the previous slide once the left chevron is clicked */
             onClick={prevSlide}
           />
 
           <FontAwesomeIcon
             className="chevright"
             icon={Icon.faChevronRight}
+            /* onClick attribute used to switch to the next slide once the right chevron is clicked */
             onClick={nextSlide}
           />
         </div>

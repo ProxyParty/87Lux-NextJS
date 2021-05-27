@@ -11,6 +11,11 @@ const Projects = ({ slides }) => {
   const length = slides.length;
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
+    var i;
+    var projSlides = document.querySelectorAll(".slide");
+    for (i = 0; i < length; i++) {
+      projSlides[i].style.order = i - 1;
+    }
   };
   const prevSlide = () => {
     setCurrent(current === 0 ? length - 1 : current - 1);
